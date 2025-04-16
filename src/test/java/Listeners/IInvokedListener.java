@@ -34,7 +34,8 @@ public class IInvokedListener implements IInvokedMethodListener {
             try {
                ClassesUtils.takeScreenshot(getDriver() ,testResult.getName());
             } catch (IOException e) {
-                e.getStackTrace();
+                 LogsUtils.error("Error in taking screenshot"+ e.getMessage());
+                 e.getStackTrace();
             }
 
         }

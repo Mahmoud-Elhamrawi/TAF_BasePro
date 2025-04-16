@@ -42,7 +42,7 @@ public class ClassesUtils {
 
     //TODO:: timestamp
     public static String getTimestamp() {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
     }
 
     //TODO :: Scrolling
@@ -69,6 +69,7 @@ public class ClassesUtils {
         try {
             Allure.addAttachment(screenshotName , Files.newInputStream(Path.of(dis.getPath())));
         } catch (IOException e) {
+            LogsUtils.error("Error in taking screenshot"+ e.getMessage());
            e.getStackTrace();
         }
 
